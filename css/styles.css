@@ -1,0 +1,487 @@
+:root {
+    --primary-color: #0f172a;
+    --accent-color: #10b981;
+    --accent-hover: #059669;
+    --bg-surface: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-main);
+    background-color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: all 0.25s ease;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.navbar.scrolled {
+    border-bottom-color: var(--border-color);
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-color) !important;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.navbar-brand .material-symbols-outlined {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: 0.5rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+    background-color: var(--bg-surface);
+}
+
+.nav-link i {
+    font-size: 0.85rem;
+    margin-right: 0.35rem;
+    opacity: 0.8;
+}
+
+
+/* Hero / Header */
+
+.hero-section {
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+    background: radial-gradient(circle at top center, #f1f5f9 0%, #ffffff 70%);
+}
+
+.badge-pill-soft {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-hover);
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+}
+
+.hero-title {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1.075rem;
+    max-width: 640px;
+    margin: 1rem auto 0;
+}
+
+
+/* Cards */
+
+.tool-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.08);
+}
+
+.tool-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.75rem;
+    background-color: #ecfdf5;
+    color: var(--accent-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.tool-card .card-title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tool-card .card-text {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-modern {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 0.6rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-modern:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+
+/* Soft Surface Section */
+
+.surface-section {
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feature-item {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.feature-item i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+
+/* Scroll News Card */
+
+.news-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.scroll-shadows {
+    max-height: 290px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.scroll-shadows::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll-shadows::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-shadows::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 9999px;
+}
+
+.scroll-shadows li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.scroll-shadows li a:hover {
+    background-color: var(--bg-surface);
+    color: var(--accent-hover);
+}
+
+
+/* About Content Box */
+
+.content-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.5rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: #f1f5f9;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+}
+
+
+/* Footer */
+
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+
+/* Service & Contact Cards */
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem 1.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.08);
+}
+
+.service-card .card-title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+}
+
+.service-card .card-text {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+    margin-bottom: 0;
+}
+
+.form-control {
+    border-color: var(--border-color);
+    border-radius: 0.6rem;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.contact-info-box {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 0.85rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.925rem;
+}
+
+.contact-info-item i {
+    color: var(--accent-color);
+    width: 18px;
+    text-align: center;
+}
+
+
+/* Tool Workspace & Controls */
+
+.tool-workspace {
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+}
+
+.tool-box {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+}
+
+.form-select {
+    border-color: var(--border-color);
+    border-radius: 0.6rem;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.btn-op {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 0.65rem;
+    border-radius: 0.65rem;
+    transition: all 0.15s ease;
+}
+
+.btn-op:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.925rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.6rem;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+}
+
+.btn-soft-secondary {
+    background-color: #f1f5f9;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.925rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.6rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.btn-soft-secondary:hover {
+    background-color: #e2e8f0;
+    color: var(--primary-color);
+}
+
+.result-panel {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+}
+
+
+/* Custom Alert Modal */
+
+.mytools-modal .modal-content {
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    box-shadow: 0 20px 35px -12px rgba(15, 23, 42, 0.14);
+    overflow: hidden;
+}
+
+.mytools-modal .modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.25rem;
+    background-color: #ffffff;
+}
+
+.mytools-modal .modal-body {
+    padding: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.mytools-modal .modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 0.85rem 1.25rem;
+    background-color: var(--bg-surface);
+}
+
+.modal-icon-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.modal-icon-warning {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.modal-icon-danger {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.modal-icon-success {
+    background-color: #ecfdf5;
+    color: #059669;
+}
