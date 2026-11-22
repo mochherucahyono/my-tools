@@ -8,8 +8,12 @@
     --text-muted: #475569;
 }
 
+html {
+    font-size: 100% !important;
+}
+
 body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
     color: var(--text-main);
     background-color: #ffffff;
     line-height: 1.6;
