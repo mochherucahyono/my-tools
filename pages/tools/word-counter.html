@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penghitung Kata & Karakter — MyTools</title>
+    <link rel="icon" type="image/png" href="../../public/my-tools.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0&icon-names=arrow_back,construction" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../tools.html">
+                <span class="material-symbols-outlined fs-6">arrow_back</span>
+                <span class="material-symbols-outlined">construction</span> MyTools
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">
+                            Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../tools.html">
+                            Tools
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">
+                            Tentang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../service.html">
+                            Layanan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">
+                            Kontak
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Workspace -->
+    <main class="tool-workspace flex-grow-1">
+        <div class="container">
+            <div class="text-center mb-4">
+                <div class="badge-pill-soft">
+                    <i class="fas fa-file-lines"></i> Produktivitas & Teks
+                </div>
+                <h1 class="h2 hero-title">Penghitung Kata & Karakter</h1>
+                <p class="text-muted mb-0">Hitung jumlah kata, karakter, kalimat, dan perkiraan waktu baca secara langsung.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="tool-box">
+                        <!-- Statistik Ringkas -->
+                        <div class="row row-cols-2 row-cols-md-4 g-3 mb-4">
+                            <div class="col">
+                                <div class="stat-card">
+                                    <div class="stat-value" id="wordCount">0</div>
+                                    <div class="stat-label">Kata</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="stat-card">
+                                    <div class="stat-value" id="charWithSpace">0</div>
+                                    <div class="stat-label">Karakter (Spasi)</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="stat-card">
+                                    <div class="stat-value" id="charNoSpace">0</div>
+                                    <div class="stat-label">Tanpa Spasi</div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="stat-card">
+                                    <div class="stat-value" id="sentenceCount">0</div>
+                                    <div class="stat-label">Kalimat</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Area Input Teks -->
+                        <div class="mb-3">
+                            <label for="textInput" class="form-label">Teks Anda</label>
+                            <textarea id="textInput" class="word-textarea w-100" rows="8" placeholder="Ketik atau tempel (paste) teks di sini..."></textarea>
+                        </div>
+
+                        <!-- Info Tambahan & Tombol Aksi -->
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="small text-muted">
+                                <i class="far fa-clock me-1"></i> Perkiraan waktu baca: <strong id="readingTime">0 detik</strong>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-accent" onclick="copyText()">
+                                    <i class="far fa-copy me-1"></i> Salin Teks
+                                </button>
+                                <button type="button" class="btn btn-soft-secondary" onclick="clearTextCounter()">
+                                    <i class="fas fa-trash-can me-1"></i> Bersihkan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 MyTools. Dibuat oleh Heru Cahyono.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

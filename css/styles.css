@@ -169,6 +169,28 @@ body {
     color: #ffffff;
 }
 
+.btn-outline-modern {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.35rem;
+    border-radius: 0.65rem;
+    border: 1px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-modern:hover {
+    background-color: var(--bg-surface);
+    border-color: #cbd5e1;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
 
 /* Soft Surface Section */
 
@@ -484,4 +506,46 @@ body {
 .modal-icon-success {
     background-color: #ecfdf5;
     color: #059669;
+}
+
+
+/* Word Counter Workspace */
+
+.word-textarea {
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--text-main);
+    resize: vertical;
+    min-height: 220px;
+}
+
+.word-textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    outline: none;
+}
+
+.stat-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 0.25rem;
 }

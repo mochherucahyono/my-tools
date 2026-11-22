@@ -241,7 +241,97 @@ function resetForm() {
 }
 
 // ==========================================
-// 4. FORM KONTAK (contact.html)
+// 4. PENGHITUNG KATA & KARAKTER (pages/tools/word-counter.html)
+// ==========================================
+function updateTextStats() {
+    const inputEl = document.getElementById('textInput');
+    if (!inputEl) return;
+
+    const text = inputEl.value;
+    const trimmed = text.trim();
+
+    const words = trimmed ? trimmed.split(/\s+/).length : 0;
+    const charWithSpace = text.length;
+    const charNoSpace = text.replace(/\s/g, '').length;
+    const sentences = trimmed ?
+        trimmed.split(/[.!?]+/).filter(s => s.trim().length > 0).length :
+        0;
+
+    const totalSeconds = Math.ceil((words / 200) * 60);
+    let bacaText = '0 detik';
+    if (words > 0) {
+        if (totalSeconds < 60) {
+            bacaText = `${totalSeconds} detik`;
+        } else {
+            const menit = Math.floor(totalSeconds / 60);
+            const sisaDetik = totalSeconds % 60;
+            bacaText = sisaDetik > 0 ? `${menit} menit ${sisaDetik} detik` : `${menit} menit`;
+        }
+    }
+
+    const wordEl = document.getElementById('wordCount');
+    const withSpaceEl = document.getElementById('charWithSpace');
+    const noSpaceEl = document.getElementById('charNoSpace');
+    const sentenceEl = document.getElementById('sentenceCount');
+    const readingEl = document.getElementById('readingTime');
+
+    if (wordEl) wordEl.textContent = words.toLocaleString('id-ID');
+    if (withSpaceEl) withSpaceEl.textContent = charWithSpace.toLocaleString('id-ID');
+    if (noSpaceEl) noSpaceEl.textContent = charNoSpace.toLocaleString('id-ID');
+    if (sentenceEl) sentenceEl.textContent = sentences.toLocaleString('id-ID');
+    if (readingEl) readingEl.textContent = bacaText;
+}
+
+function copyText() {
+    const inputEl = document.getElementById('textInput');
+    if (!inputEl) return;
+
+    if (!inputEl.value.trim()) {
+        showAlertModal(
+            "Teks Kosong",
+            "Tidak ada teks yang dapat disalin. Silakan ketik atau tempel teks terlebih dahulu.",
+            "warning"
+        );
+        return;
+    }
+
+    navigator.clipboard.writeText(inputEl.value).then(() => {
+        showAlertModal(
+            "Berhasil Disalin",
+            "Teks telah disalin ke clipboard.",
+            "success"
+        );
+    }).catch(() => {
+        inputEl.select();
+        document.execCommand('copy');
+        showAlertModal(
+            "Berhasil Disalin",
+            "Teks telah disalin ke clipboard.",
+            "success"
+        );
+    });
+}
+
+function clearTextCounter() {
+    const inputEl = document.getElementById('textInput');
+    if (!inputEl) return;
+
+    if (!inputEl.value) {
+        showAlertModal(
+            "Sudah Kosong",
+            "Area teks sudah kosong.",
+            "warning"
+        );
+        return;
+    }
+
+    inputEl.value = '';
+    updateTextStats();
+    inputEl.focus();
+}
+
+// ==========================================
+// 5. FORM KONTAK & INISIALISASI UI
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
     const formKontak = document.getElementById('formKontak');
@@ -274,6 +364,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const textInput = document.getElementById('textInput');
+    if (textInput) {
+        textInput.addEventListener('input', updateTextStats);
+        updateTextStats();
+    }
+
     // Tutup menu mobile otomatis setelah klik link navigasi
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
         link.addEventListener('click', function() {
@@ -289,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==========================================
-// 5. EFEK SCROLL NAVBAR
+// 6. EFEK SCROLL NAVBAR
 // ==========================================
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
