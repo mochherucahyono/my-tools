@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daftar Tools — MyTools</title>
+    <title>Daftar Alat — MyTools</title>
     <link rel="icon" type="image/png" href="../public/my-tools.png" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="tools.html">
-                            Tools
+                            Alat
                         </a>
                     </li>
                     <li class="nav-item">
@@ -68,7 +68,7 @@
                 <i class="fas fa-toolbox"></i> Koleksi Alat Digital
             </div>
             <h1 class="display-5 hero-title">Semua Alat MyTools</h1>
-            <p class="hero-subtitle">
+            <p id="tools" class="hero-subtitle">
                 Pilih alat yang Anda butuhkan untuk perhitungan, konversi, maupun produktivitas harian langsung dari peramban.
             </p>
         </div>
@@ -141,14 +141,87 @@
                         </div>
                     </div>
                 </div>
+                <!-- Password Generator Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card h-100 d-flex flex-column text-start">
+                        <div class="tool-icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h2 class="card-title">Password Generator</h2>
+                        <p class="card-text flex-grow-1">Buat kata sandi acak yang kuat sesuai panjang dan kombinasi karakter pilihanmu.</p>
+                        <div>
+                            <a href="tools/password-generator.html" class="btn btn-modern">
+                                Buka Alat <i class="fas fa-arrow-right fa-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discount Calculator Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card h-100 d-flex flex-column text-start">
+                        <div class="tool-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h2 class="card-title">Kalkulator Diskon</h2>
+                        <p class="card-text flex-grow-1">Hitung harga akhir, potongan hemat, diskon tambahan, dan pajak dengan cepat.</p>
+                        <div>
+                            <a href="tools/discount-calculator.html" class="btn btn-modern">
+                                Buka Alat <i class="fas fa-arrow-right fa-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit Converter Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card h-100 d-flex flex-column text-start">
+                        <div class="tool-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <h2 class="card-title">Konverter Satuan</h2>
+                        <p class="card-text flex-grow-1">Konversi satuan panjang, berat, dan suhu secara praktis untuk kebutuhan harian.</p>
+                        <div>
+                            <a href="tools/unit-converter.html" class="btn btn-modern">
+                                Buka Alat <i class="fas fa-arrow-right fa-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Date & Age Calculator Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="tool-card h-100 d-flex flex-column text-start">
+                        <div class="tool-icon">
+                            <i class="fas fa-calendar-days"></i>
+                        </div>
+                        <h2 class="card-title">Kalkulator Tanggal & Usia</h2>
+                        <p class="card-text flex-grow-1">Hitung selisih hari antar tanggal maupun usia detail dalam tahun, bulan, dan hari.</p>
+                        <div>
+                            <a href="tools/date-calculator.html" class="btn btn-modern">
+                                Buka Alat <i class="fas fa-arrow-right fa-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="footer">
         <div class="container">
-            <p class="mb-0">&copy; 2025 MyTools. Dibuat oleh Heru Cahyono.</p>
+            <div class="footer-inner">
+                <p class="mb-0">&copy; 2025 MyTools. Dibuat oleh Heru Cahyono.</p>
+                <ul class="footer-nav">
+                    <li><a href="../index.html">Beranda</a></li>
+                    <li><a href="tools.html">Alat</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="service.html">Layanan</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 

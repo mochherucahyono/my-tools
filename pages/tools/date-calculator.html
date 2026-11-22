@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Tanggal & Usia — MyTools</title>
+    <link rel="icon" type="image/png" href="../../public/my-tools.png" />>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0&icon-names=arrow_back,construction" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../tools.html#tools">
+                <span class="material-symbols-outlined fs-6">arrow_back</span>
+                <span class="material-symbols-outlined">construction</span> MyTools
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../tools.html">Alat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../service.html">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Workspace -->
+    <main class="tool-workspace flex-grow-1">
+        <div class="container">
+            <div class="text-center mb-4">
+                <div class="badge-pill-soft">
+                    <i class="fas fa-calendar-days"></i> Utilitas Waktu
+                </div>
+                <h1 class="h2 hero-title">Kalkulator Tanggal & Usia</h1>
+                <p class="text-muted mb-0">Hitung selisih hari antar tanggal maupun usia detail dalam tahun, bulan, dan hari.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="tool-box">
+                        <!-- Mode Tab -->
+                        <div class="btn-group w-100 mb-4" role="group" aria-label="Mode kalkulator tanggal">
+                            <button type="button" class="btn btn-accent active" id="modeDiffBtn">Selisih Tanggal</button>
+                            <button type="button" class="btn btn-soft-secondary" id="modeAgeBtn">Hitung Usia</button>
+                        </div>
+
+                        <!-- Mode 1: Selisih Tanggal -->
+                        <form id="dateDiffForm">
+                            <div class="mb-3">
+                                <label for="startDate" class="form-label">Tanggal Awal</label>
+                                <input type="date" id="startDate" class="form-control" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="endDate" class="form-label">Tanggal Akhir / Target</label>
+                                <input type="date" id="endDate" class="form-control" required>
+                            </div>
+
+                            <div class="d-flex gap-2 mb-4">
+                                <button type="button" id="calcDiffBtn" class="btn btn-accent flex-grow-1">
+                                    <i class="fas fa-calculator me-1"></i> Hitung Selisih
+                                </button>
+                                <button type="button" id="resetDiffBtn" class="btn btn-soft-secondary">
+                                    <i class="fas fa-rotate-left"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="result-panel" id="diffResultPanel" style="display: none;">
+                                <div class="small text-muted mb-1">Selisih Waktu</div>
+                                <div class="h5 fw-bold mb-1" id="diffDaysOutput" style="color: var(--accent-hover);">0 Hari</div>
+                                <div class="small text-muted" id="diffDetailOutput"></div>
+                            </div>
+                        </form>
+
+                        <!-- Mode 2: Hitung Usia -->
+                        <form id="ageCalcForm" style="display: none;">
+                            <div class="mb-3">
+                                <label for="birthDate" class="form-label">Tanggal Lahir</label>
+                                <input type="date" id="birthDate" class="form-control" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="referenceDate" class="form-label">Hitung Hingga Tanggal</label>
+                                <input type="date" id="referenceDate" class="form-control" required>
+                            </div>
+
+                            <div class="d-flex gap-2 mb-4">
+                                <button type="button" id="calcAgeBtn" class="btn btn-accent flex-grow-1">
+                                    <i class="fas fa-cake-candles me-1"></i> Hitung Usia
+                                </button>
+                                <button type="button" id="resetAgeBtn" class="btn btn-soft-secondary">
+                                    <i class="fas fa-rotate-left"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="result-panel" id="ageResultPanel" style="display: none;">
+                                <div class="small text-muted mb-1">Usia Saat Ini</div>
+                                <div class="h5 fw-bold mb-1" id="ageMainOutput" style="color: var(--accent-hover);">-</div>
+                                <div class="small text-muted" id="ageNextBirthdayOutput"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto">
+        <div class="container">
+            <div class="footer-inner">
+                <p class="mb-0">&copy; 2025 MyTools. Dibuat oleh Heru Cahyono.</p>
+                <ul class="footer-nav">
+                    <li><a href="../../index.html">Beranda</a></li>
+                    <li><a href="../tools.html">Alat</a></li>
+                    <li><a href="../about.html">Tentang</a></li>
+                    <li><a href="../service.html">Layanan</a></li>
+                    <li><a href="../contact.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/date-calculator.js"></script>
+</body>
+
+</html>
