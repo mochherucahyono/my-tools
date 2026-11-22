@@ -29,6 +29,22 @@ body {
     padding-bottom: 0.85rem;
 }
 
+
+/* Mobile Navbar Collapse Spacing */
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-collapse {
+        margin-top: 0.85rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.35rem;
+        border-top: 1px solid var(--border-color, #e2e8f0);
+    }
+    .navbar .navbar-nav .nav-link {
+        padding: 0.65rem 1rem;
+        border-radius: 0.65rem;
+    }
+}
+
 .navbar.scrolled {
     border-bottom-color: var(--border-color);
     box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
