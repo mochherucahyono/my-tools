@@ -370,6 +370,26 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextStats();
     }
 
+    document.querySelectorAll('.nav-toggler-btn').forEach(function(button) {
+        const collapseId = button.getAttribute('aria-controls');
+        const navbarCollapse = collapseId ? document.getElementById(collapseId) : null;
+
+        if (!navbarCollapse) return;
+
+        function updateMenuTooltip(isOpen) {
+            button.setAttribute('data-tooltip', isOpen ? 'Tutup' : 'Menu');
+            button.setAttribute('aria-label', isOpen ? 'Tutup navigasi' : 'Buka menu navigasi');
+        }
+
+        updateMenuTooltip(navbarCollapse.classList.contains('show'));
+        navbarCollapse.addEventListener('shown.bs.collapse', function() {
+            updateMenuTooltip(true);
+        });
+        navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+            updateMenuTooltip(false);
+        });
+    });
+
     // Tutup menu mobile otomatis setelah klik link navigasi
     document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
         link.addEventListener('click', function() {

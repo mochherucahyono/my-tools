@@ -71,6 +71,69 @@ body {
 }
 
 
+/* Navbar Hamburger Button */
+
+.nav-toggler-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 0.75rem;
+    background-color: var(--bg-surface, #f8fafc);
+    border: 1px solid var(--border-color, #e2e8f0);
+    color: var(--primary-color, #0f172a);
+    transition: all 0.2s ease;
+}
+
+.nav-toggler-btn:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: var(--accent-color, #10b981);
+    color: var(--accent-hover, #059669);
+}
+
+.nav-toggler-btn:focus,
+.nav-toggler-btn:focus-visible {
+    outline: 2px solid rgba(16, 185, 129, 0.35);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.nav-toggler-line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: currentColor;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+}
+
+
+/* Animasi garis menjadi silang (X) saat menu terbuka */
+
+.nav-toggler-btn[aria-expanded="true"] {
+    background-color: rgba(16, 185, 129, 0.12);
+    border-color: var(--accent-color, #10b981);
+    color: var(--accent-hover, #059669);
+}
+
+.nav-toggler-btn[aria-expanded="true"] .nav-toggler-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggler-btn[aria-expanded="true"] .nav-toggler-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggler-btn[aria-expanded="true"] .nav-toggler-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
 /* Hero / Header */
 
 .hero-section {
@@ -703,4 +766,42 @@ body {
     [data-tooltip]::after {
         transition: none;
     }
+}
+
+
+/* Navbar Back Button on Tool Pages */
+
+.nav-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.75rem;
+    background-color: var(--bg-surface, #f8fafc);
+    border: 1px solid var(--border-color, #e2e8f0);
+    color: var(--primary-color, #0f172a);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav-back-btn:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: var(--accent-color, #10b981);
+    color: var(--accent-hover, #059669);
+    transform: translateX(-2px);
+}
+
+.nav-back-btn:active {
+    transform: translateX(-1px) scale(0.97);
+}
+
+.nav-back-btn:focus-visible {
+    outline: 2px solid rgba(16, 185, 129, 0.35);
+    outline-offset: 2px;
+}
+
+.nav-back-btn .material-symbols-outlined {
+    font-size: 1.25rem;
+    line-height: 1;
 }
