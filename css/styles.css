@@ -783,7 +783,7 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 0.75rem;
+    border-radius: 100%;
     background-color: var(--bg-surface, #f8fafc);
     border: 1px solid var(--border-color, #e2e8f0);
     color: var(--primary-color, #0f172a);
@@ -795,11 +795,6 @@ body {
     background-color: rgba(16, 185, 129, 0.1);
     border-color: var(--accent-color, #10b981);
     color: var(--accent-hover, #059669);
-    transform: translateX(-2px);
-}
-
-.nav-back-btn:active {
-    transform: translateX(-1px) scale(0.97);
 }
 
 .nav-back-btn:focus-visible {
